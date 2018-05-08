@@ -1,0 +1,13 @@
+# Enable the creation of Neutron networks for isolated Overcloud
+# traffic and configure each role to assign ports (related
+# to that role) on these networks.
+resource_registry:
+  # Port assignments for the compute sriov role
+  OS::TripleO::ComputeSriov::Ports::ExternalPort: /usr/share/openstack-tripleo-heat-templates/network/ports/noop.yaml
+  OS::TripleO::ComputeSriov::Ports::InternalApiPort: /usr/share/openstack-tripleo-heat-templates/network/ports/internal_api.yaml
+  OS::TripleO::ComputeSriov::Ports::StoragePort: /usr/share/openstack-tripleo-heat-templates/network/ports/storage.yaml
+  OS::TripleO::ComputeSriov::Ports::StorageMgmtPort: /usr/share/openstack-tripleo-heat-templates/network/ports/noop.yaml
+  OS::TripleO::ComputeSriov::Ports::TenantPort: /usr/share/openstack-tripleo-heat-templates/network/ports/tenant.yaml
+  #OS::TripleO::ComputeSriov::Ports::ManagementPort: /usr/share/openstack-tripleo-heat-templates/network/ports/management.yaml
+
+  OS::TripleO::Controller::Ports::ExternalPort: /usr/share/openstack-tripleo-heat-templates/network/ports/noop.yaml
