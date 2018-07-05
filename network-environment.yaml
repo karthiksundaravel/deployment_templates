@@ -173,7 +173,14 @@ parameter_defaults:
       product_id: "1528"
       vendor_id: "8086"
       device_type: "type-PF"
-
+    - devname: "ens6f0"
+      physical_network: "phy-sriov1"
+      product_id: "1515"
+      vendor_id: "8086"
+    - devname: "ens6f1"
+      physical_network: "phy-sriov2"
+      product_id: "1515"
+      vendor_id: "8086"
 
   NeutronSupportedPCIVendorDevs: ['8086:1515','8086:1528']
   NeutronPhysicalDevMappings: "phy-sriov1:ens6f0,phy-sriov2:ens6f1"
